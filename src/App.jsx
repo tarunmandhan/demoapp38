@@ -6,9 +6,14 @@ const App = () => {
   return (
     <>
       <button
-        onClick={() => {
-          setNum(num + 1);
-        }}
+        onClick={
+          (() => {
+            setNum(num + 1);
+          },
+          () => {
+            alert("I am clicked");
+          })
+        }
       >
         Click me {num}
       </button>
